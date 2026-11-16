@@ -1,0 +1,38 @@
+{
+  "name": "dsh-haos",
+  "version": "0.2.0",
+  "description": "Haos DSH 插件：在 DSH 内启动 Haos Agent，注册实例并建立 WEB 反向 Tunnel。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "client-src",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build:client": "node scripts/build-client.mjs"
+  }
+}

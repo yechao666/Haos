@@ -1,0 +1,5 @@
+# 把 Haos Agent 挂到一个 DSH profile。
+#   dsh plugin --profile desktop add link:/path/to/haos/integrations/dsh-haos
+- insert:
+    - id: dsh-haos
+      name: 'dsh-haos'

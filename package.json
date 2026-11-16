@@ -1,0 +1,28 @@
+{
+  "name": "haos",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Haos — DSH 实例集中管理原型",
+  "engines": {
+    "node": ">=22.19"
+  },
+  "scripts": {
+    "start": "node server/src/main.mjs",
+    "dev": "node --watch server/src/main.mjs",
+    "seed": "node server/src/seed.mjs",
+    "agent": "node integrations/haos-agent/agent.mjs",
+    "mock": "node scripts/mock-dsh-web.mjs",
+    "test": "node --test server/test/*.test.mjs integrations/dsh-haos/test/*.test.mjs",
+    "profile:haos": "node scripts/create-haos-profile.mjs",
+    "build:plugin-client": "node integrations/dsh-haos/scripts/build-client.mjs",
+    "install:plugin": "node scripts/install-dsh-plugin.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
